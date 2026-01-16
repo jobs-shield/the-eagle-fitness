@@ -2,6 +2,8 @@
 
 A premium, high-end gym website built with React, Vite, and Tailwind CSS.
 
+🔗 **Live Demo**: [https://jobs-shield.github.io/the-eagle-fitness/](https://jobs-shield.github.io/the-eagle-fitness/)
+
 ## Features
 - **Modern Luxury Design**: Black & Gold theme with glassmorphism and animations.
 - **Admin Panel**: Client-side gallery management (password protected).
