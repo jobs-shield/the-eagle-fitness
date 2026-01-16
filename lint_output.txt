@@ -1,0 +1,138 @@
+
+> the-eagle-fitness@0.0.0 lint
+> eslint .
+
+
+E:\antigravity\the-eagle-fitness\src\App.jsx
+   1:8   warning  'React' is defined but never used                 no-unused-vars
+   2:24  warning  'Router' is defined but never used                no-unused-vars
+   2:32  warning  'Routes' is defined but never used                no-unused-vars
+   2:40  warning  'Route' is defined but never used                 no-unused-vars
+   3:8   warning  'Navbar' is defined but never used                no-unused-vars
+   4:8   warning  'Footer' is defined but never used                no-unused-vars
+   5:10  warning  'GalleryProvider' is defined but never used       no-unused-vars
+   7:8   warning  'Home' is defined but never used                  no-unused-vars
+   8:8   warning  'About' is defined but never used                 no-unused-vars
+   9:8   warning  'Trainers' is defined but never used              no-unused-vars
+  10:8   warning  'Membership' is defined but never used            no-unused-vars
+  11:8   warning  'Gallery' is defined but never used               no-unused-vars
+  12:8   warning  'Contact' is defined but never used               no-unused-vars
+  13:8   warning  'Login' is defined but never used                 no-unused-vars
+  14:8   warning  'Admin' is defined but never used                 no-unused-vars
+  16:7   warning  'ScrollToTop' is assigned a value but never used  no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\components\Footer.jsx
+  1:8   warning  'React' is defined but never used      no-unused-vars
+  2:10  warning  'Instagram' is defined but never used  no-unused-vars
+  2:21  warning  'MapPin' is defined but never used     no-unused-vars
+  2:29  warning  'Phone' is defined but never used      no-unused-vars
+  3:10  warning  'Link' is defined but never used       no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\components\Navbar.jsx
+  1:8   warning  'React' is defined but never used     no-unused-vars
+  2:10  warning  'Link' is defined but never used      no-unused-vars
+  3:10  warning  'Menu' is defined but never used      no-unused-vars
+  3:16  warning  'X' is defined but never used         no-unused-vars
+  3:19  warning  'Dumbbell' is defined but never used  no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\components\ui\Button.jsx
+  1:8   warning  'React' is defined but never used  no-unused-vars
+  2:10  warning  'clsx' is defined but never used   no-unused-vars
+  4:10  warning  'Link' is defined but never used   no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\components\ui\Section.jsx
+  1:8   warning  'React' is defined but never used  no-unused-vars
+  2:10  warning  'clsx' is defined but never used   no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\context\GalleryContext.jsx
+   1:8   warning  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+   5:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-refresh/only-export-components
+  13:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  11 |         const savedImages = localStorage.getItem('eagle_gallery');
+  12 |         if (savedImages) {
+> 13 |             setImages(JSON.parse(savedImages));
+     |             ^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |         }
+  15 |     }, []);
+  16 |  react-hooks/set-state-in-effect
+
+E:\antigravity\the-eagle-fitness\src\main.jsx
+  1:8  warning  'React' is defined but never used  no-unused-vars
+  3:8  warning  'App' is defined but never used    no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\About.jsx
+  1:8   warning  'React' is defined but never used    no-unused-vars
+  2:10  warning  'motion' is defined but never used   no-unused-vars
+  3:8   warning  'Section' is defined but never used  no-unused-vars
+  4:10  warning  'Target' is defined but never used   no-unused-vars
+  4:18  warning  'Shield' is defined but never used   no-unused-vars
+  4:26  warning  'Zap' is defined but never used      no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Admin.jsx
+  1:8   warning  'React' is defined but never used    no-unused-vars
+  3:10  warning  'Trash2' is defined but never used   no-unused-vars
+  3:18  warning  'Upload' is defined but never used   no-unused-vars
+  3:26  warning  'LogOut' is defined but never used   no-unused-vars
+  4:8   warning  'Section' is defined but never used  no-unused-vars
+  5:8   warning  'Button' is defined but never used   no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Contact.jsx
+  1:8   warning  'React' is defined but never used      no-unused-vars
+  2:10  warning  'motion' is defined but never used     no-unused-vars
+  3:10  warning  'MapPin' is defined but never used     no-unused-vars
+  3:18  warning  'Phone' is defined but never used      no-unused-vars
+  3:25  warning  'Instagram' is defined but never used  no-unused-vars
+  4:8   warning  'Section' is defined but never used    no-unused-vars
+  5:8   warning  'Button' is defined but never used     no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Gallery.jsx
+  1:8   warning  'React' is defined but never used            no-unused-vars
+  2:10  warning  'motion' is defined but never used           no-unused-vars
+  2:18  warning  'AnimatePresence' is defined but never used  no-unused-vars
+  3:10  warning  'X' is defined but never used                no-unused-vars
+  3:22  warning  'ImageIcon' is defined but never used        no-unused-vars
+  4:8   warning  'Section' is defined but never used          no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Home.jsx
+  1:8   warning  'React' is defined but never used       no-unused-vars
+  2:10  warning  'motion' is defined but never used      no-unused-vars
+  3:10  warning  'Dumbbell' is defined but never used    no-unused-vars
+  3:20  warning  'Activity' is defined but never used    no-unused-vars
+  3:30  warning  'Users' is defined but never used       no-unused-vars
+  3:37  warning  'Cloud' is defined but never used       no-unused-vars
+  3:44  warning  'ArrowRight' is defined but never used  no-unused-vars
+  4:8   warning  'Button' is defined but never used      no-unused-vars
+  5:8   warning  'Section' is defined but never used     no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Login.jsx
+  1:8   warning  'React' is defined but never used    no-unused-vars
+  3:10  warning  'Lock' is defined but never used     no-unused-vars
+  4:8   warning  'Section' is defined but never used  no-unused-vars
+  5:8   warning  'Button' is defined but never used   no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Membership.jsx
+  1:8   warning  'React' is defined but never used    no-unused-vars
+  2:10  warning  'motion' is defined but never used   no-unused-vars
+  3:10  warning  'Check' is defined but never used    no-unused-vars
+  3:17  warning  'Info' is defined but never used     no-unused-vars
+  4:8   warning  'Button' is defined but never used   no-unused-vars
+  5:8   warning  'Section' is defined but never used  no-unused-vars
+
+E:\antigravity\the-eagle-fitness\src\pages\Trainers.jsx
+  1:8   warning  'React' is defined but never used       no-unused-vars
+  2:10  warning  'motion' is defined but never used      no-unused-vars
+  3:10  warning  'Instagram' is defined but never used   no-unused-vars
+  3:21  warning  'ArrowRight' is defined but never used  no-unused-vars
+  3:33  warning  'Award' is defined but never used       no-unused-vars
+  4:8   warning  'Section' is defined but never used     no-unused-vars
+  5:8   warning  'Button' is defined but never used      no-unused-vars
+
+✖ 87 problems (1 error, 86 warnings)
+
