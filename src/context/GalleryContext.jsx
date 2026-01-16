@@ -19,34 +19,50 @@ const GalleryContext = createContext();
 
 export const useGallery = () => useContext(GalleryContext);
 
-export const GalleryProvider = ({ children }) => {
-    const [images, setImages] = useState([]);
+// Seed Data (Default Gallery - The Eagle Fitness Facility)
+// Define outside component to prevent recreation on every render
+const defaultImages = [
+    { id: 1, url: gallery1 },
+    { id: 2, url: gallery2 },
+    { id: 3, url: gallery3 },
+    { id: 4, url: gallery4 },
+    { id: 5, url: gallery5 },
+    { id: 6, url: gallery6 },
+    { id: 7, url: gallery7 },
+    { id: 8, url: gallery8 },
+    { id: 9, url: gallery9 },
+    { id: 10, url: gallery10 },
+    { id: 11, url: gallery11 },
+    { id: 12, url: gallery12 },
+    { id: 13, url: gallery13 },
+    { id: 14, url: gallery14 },
+    { id: 15, url: gallery15 }
+];
 
-    // Seed Data (Default Gallery - The Eagle Fitness Facility)
-    const defaultImages = [
-        { id: 1, url: gallery1 },
-        { id: 2, url: gallery2 },
-        { id: 3, url: gallery3 },
-        { id: 4, url: gallery4 },
-        { id: 5, url: gallery5 },
-        { id: 6, url: gallery6 },
-        { id: 7, url: gallery7 },
-        { id: 8, url: gallery8 },
-        { id: 9, url: gallery9 },
-        { id: 10, url: gallery10 },
-        { id: 11, url: gallery11 },
-        { id: 12, url: gallery12 },
-        { id: 13, url: gallery13 },
-        { id: 14, url: gallery14 },
-        { id: 15, url: gallery15 }
-    ];
+export const GalleryProvider = ({ children }) => {
+    const [images, setImages] = useState(defaultImages);
 
     useEffect(() => {
         const savedImages = localStorage.getItem('eagle_gallery');
         if (savedImages) {
-            setImages(JSON.parse(savedImages));
+            try {
+                const parsed = JSON.parse(savedImages);
+                // Validate that saved images have proper structure
+                if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].url) {
+                    setImages(parsed);
+                } else {
+                    // Invalid data, use defaults
+                    setImages(defaultImages);
+                    localStorage.setItem('eagle_gallery', JSON.stringify(defaultImages));
+                }
+            } catch (error) {
+                // Parse error, use defaults
+                console.error('Error parsing gallery from localStorage:', error);
+                setImages(defaultImages);
+                localStorage.setItem('eagle_gallery', JSON.stringify(defaultImages));
+            }
         } else {
-            setImages(defaultImages);
+            // No saved data, save defaults
             localStorage.setItem('eagle_gallery', JSON.stringify(defaultImages));
         }
     }, []);
